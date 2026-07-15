@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CoreLynx Ventures Inc. — NYC-based e-commerce and business solutions company helping businesses launch and scale across Amazon, eBay, and Shopify.">
+<title>CoreLynx Ventures Inc. — Connecting Sellers to the Digital Marketplace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:#1a1a1a;background:#fff;-webkit-font-smoothing:antialiased}
+:root{--navy:#1F3A5F;--gold:#C9A84C;--light:#F4F6F9;--grey:#5a6a7a;--border:#e2eaf3}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1140px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:38px;height:38px;background:var(--navy);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-mark span{color:#fff;font-weight:800;font-size:13px;letter-spacing:1px;font-family:'Plus Jakarta Sans',sans-serif}
+.logo-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;color:var(--navy);line-height:1.2}
+.logo-sub{font-size:10px;color:#9aabb8;font-weight:500;letter-spacing:0.05em}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;color:var(--grey);transition:color .2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta{padding:9px 22px;background:var(--navy);color:#fff;font-size:13px;font-weight:600;border-radius:5px;border:none;cursor:pointer;transition:all .2s;letter-spacing:0.02em}
+.nav-cta:hover{background:var(--gold);color:var(--navy)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;border:none;background:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.mobile-menu{display:none;background:#fff;border-bottom:1px solid var(--border);padding:1.5rem 2rem}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:10px 0;font-size:15px;font-weight:500;color:var(--grey);border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border-bottom:none}
+
+/* HERO */
+.hero{padding:88px 2rem 72px;background:#fff}
+.hero-inner{max-width:1140px;margin:0 auto}
+.hero-toprow{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:36px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--light);border:1px solid var(--border);padding:7px 16px;border-radius:4px;font-size:11px;font-weight:700;color:var(--navy);letter-spacing:0.08em;text-transform:uppercase}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.platform-tags{display:flex;gap:8px}
+.ptag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:5px 11px;background:var(--light);border:1px solid var(--border);color:var(--grey);border-radius:3px}
+.hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2.2rem,5.5vw,4rem);font-weight:800;line-height:1.06;color:var(--navy);margin-bottom:26px;max-width:820px;letter-spacing:-0.02em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-desc{font-size:16px;line-height:1.75;color:var(--grey);max-width:580px;margin-bottom:40px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:var(--navy);color:#fff;font-size:14px;font-weight:600;border-radius:5px;border:none;cursor:pointer;transition:all .2s;letter-spacing:0.01em}
+.btn-primary:hover{background:var(--gold);color:var(--navy)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border:1.5px solid var(--navy);color:var(--navy);font-size:14px;font-weight:600;border-radius:5px;background:transparent;cursor:pointer;transition:all .2s}
+.btn-outline:hover{background:var(--navy);color:#fff}
+.arrow{display:inline-block;transition:transform .2s}
+.btn-primary:hover .arrow{transform:translateX(3px)}
+.hero-stats{display:flex;gap:48px;border-top:1px solid var(--border);padding-top:36px;flex-wrap:wrap}
+.hstat-val{font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:800;color:var(--navy)}
+.hstat-label{font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#aabbc8;margin-top:3px}
+
+/* TICKER */
+.ticker{padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:#fafbfc;overflow:hidden}
+.ticker-track{display:flex;gap:56px;white-space:nowrap;animation:ticker 28s linear infinite}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{font-family:'Inter',monospace;font-size:11px;color:#a0b0bf;text-transform:uppercase;letter-spacing:0.12em}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ABOUT */
+.about{background:var(--navy);padding:88px 2rem;color:#fff}
+.about-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.section-eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--gold);margin-bottom:18px}
+.about h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.7rem,3.5vw,2.8rem);font-weight:800;line-height:1.18;margin-bottom:22px;letter-spacing:-0.01em}
+.about p{font-size:15px;line-height:1.8;color:#b8c8d8;margin-bottom:18px}
+.about-cta{margin-top:32px}
+.about-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:36px}
+.about-card-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:26px}
+.checklist{list-style:none}
+.checklist li{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;color:#cad8e4;line-height:1.5}
+.checklist li:last-child{border-bottom:none}
+.chk{width:20px;height:20px;border-radius:50%;background:rgba(201,168,76,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.chk svg{width:11px;height:11px;stroke:var(--gold);stroke-width:2.5;fill:none}
+.about-footer{margin-top:28px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.1);display:flex;align-items:baseline;gap:12px}
+.about-big{font-family:'Plus Jakarta Sans',sans-serif;font-size:38px;font-weight:800;color:#fff}
+.about-caption{font-size:13px;color:#7a9aaf;max-width:200px;line-height:1.45}
+
+/* SERVICES */
+.services{padding:88px 2rem;background:#fff}
+.services-inner{max-width:1140px;margin:0 auto}
+.section-header{margin-bottom:52px}
+.section-header h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.7rem,3.5vw,2.8rem);font-weight:800;color:var(--navy);margin-bottom:12px;letter-spacing:-0.01em}
+.section-header p{font-size:15px;color:var(--grey);max-width:480px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.scard{padding:34px;background:var(--light);border:1px solid var(--border);border-radius:5px;transition:all .25s;cursor:default}
+.scard:hover{border-color:var(--gold);background:#fff;transform:translateY(-2px);box-shadow:0 8px 32px rgba(31,58,95,.08)}
+.scard-icon{width:46px;height:46px;background:var(--navy);border-radius:5px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;transition:background .25s}
+.scard:hover .scard-icon{background:var(--gold)}
+.scard-icon svg{width:22px;height:22px;stroke:#fff;stroke-width:1.8;fill:none}
+.scard-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.scard-text{font-size:13px;line-height:1.75;color:var(--grey)}
+
+/* WHO */
+.who{padding:88px 2rem;background:var(--light)}
+.who-inner{max-width:1140px;margin:0 auto}
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.wcard{background:#fff;border:1px solid var(--border);border-radius:5px;padding:36px;transition:all .25s}
+.wcard:hover{border-color:var(--navy);box-shadow:0 8px 32px rgba(31,58,95,.08);transform:translateY(-2px)}
+.wcard-icon{width:50px;height:50px;background:var(--navy);border-radius:5px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;transition:background .25s}
+.wcard:hover .wcard-icon{background:var(--gold)}
+.wcard-icon svg{width:24px;height:24px;stroke:#fff;stroke-width:1.8;fill:none}
+.wcard-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.wcard-text{font-size:13px;line-height:1.78;color:var(--grey)}
+
+/* CONTACT */
+.contact{padding:88px 2rem;background:#fff;border-top:1px solid var(--border)}
+.contact-inner{max-width:1140px;margin:0 auto}
+.contact-header{margin-bottom:52px;max-width:520px}
+.contact-header h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.7rem,3.5vw,2.8rem);font-weight:800;color:var(--navy);margin-bottom:12px;letter-spacing:-0.01em}
+.contact-header p{font-size:15px;color:var(--grey)}
+.contact-grid{display:grid;grid-template-columns:2fr 3fr;gap:56px;align-items:start}
+.cinfo{display:flex;flex-direction:column;gap:30px}
+.cinfo-item{display:flex;align-items:flex-start;gap:18px}
+.cinfo-icon{width:44px;height:44px;background:var(--navy);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cinfo-icon svg{width:20px;height:20px;stroke:#fff;stroke-width:1.8;fill:none}
+.cinfo-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#aabbc8;margin-bottom:5px}
+.cinfo-val{font-size:14px;color:#333;line-height:1.6}
+.cinfo-val a{color:var(--gold)}
+.cinfo-val a:hover{text-decoration:underline}
+.cform-wrap{background:var(--light);border:1px solid var(--border);border-radius:6px;padding:36px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fgroup{margin-bottom:18px}
+.fgroup:last-of-type{margin-bottom:0}
+label{display:block;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:7px;letter-spacing:0.03em}
+input[type=text],input[type=email],textarea{width:100%;border:1px solid #cdd8e6;border-radius:5px;padding:11px 15px;font-size:14px;color:#222;background:#fff;outline:none;transition:border .2s;font-family:'Inter',sans-serif;-webkit-appearance:none}
+input:focus,textarea:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(31,58,95,.08)}
+textarea{resize:vertical;height:120px}
+.form-submit{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:13px 28px;background:var(--navy);color:#fff;font-size:14px;font-weight:600;border:none;border-radius:5px;cursor:pointer;transition:all .2s;letter-spacing:0.01em}
+.form-submit:hover{background:var(--gold);color:var(--navy)}
+.form-note{font-size:12px;color:#aabbc8;margin-top:10px}
+.form-success{display:none;background:#eafaf2;border:1px solid #86e0b4;color:#1a6640;padding:14px 18px;border-radius:5px;font-size:14px;font-weight:500;margin-top:16px}
+
+/* FOOTER */
+footer{background:var(--navy);color:#fff;padding:52px 2rem}
+.footer-inner{max-width:1140px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+.footer-left{}
+.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.footer-mark{width:34px;height:34px;background:rgba(255,255,255,0.1);border-radius:5px;display:flex;align-items:center;justify-content:center}
+.footer-mark span{color:#fff;font-weight:800;font-size:12px;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:1px}
+.footer-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px}
+.footer-tag{font-size:12px;color:#8a9fb0;margin-bottom:5px}
+.footer-email a{font-size:12px;color:var(--gold)}
+.footer-email a:hover{text-decoration:underline}
+.footer-copy{font-size:12px;color:#6a8090;text-align:right}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.services-grid,.who-grid{grid-template-columns:1fr 1fr}
+.about-inner{grid-template-columns:1fr;gap:40px}
+.contact-grid{grid-template-columns:1fr;gap:32px}
+}
+@media(max-width:640px){
+.services-grid,.who-grid{grid-template-columns:1fr}
+.nav-links,.nav-cta{display:none}
+.hamburger{display:flex}
+.form-row{grid-template-columns:1fr}
+.hero-stats{gap:24px}
+.platform-tags{display:none}
+.footer-inner{flex-direction:column;align-items:flex-start}
+.footer-copy{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="top">
+  <div class="nav-inner">
+    <div class="logo">
+      <div class="logo-mark"><span>CL</span></div>
+      <div>
+        <div class="logo-name">CoreLynx Ventures Inc.</div>
+        <div class="logo-sub">E-Commerce & Business Solutions</div>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#who">Who we work with</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get in touch</button>
+    <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mmenu').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mmenu">
+    <a href="#about" onclick="this.closest('.mobile-menu').classList.remove('open')">About</a>
+    <a href="#services" onclick="this.closest('.mobile-menu').classList.remove('open')">Services</a>
+    <a href="#who" onclick="this.closest('.mobile-menu').classList.remove('open')">Who we work with</a>
+    <a href="#contact" onclick="this.closest('.mobile-menu').classList.remove('open')">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-toprow">
+      <div class="hero-badge"><span class="hero-dot"></span>New York City — E-Commerce &amp; Business Solutions</div>
+      <div class="platform-tags">
+        <span class="ptag">Amazon</span>
+        <span class="ptag">eBay</span>
+        <span class="ptag">Shopify</span>
+      </div>
+    </div>
+    <h1>Taking your business online —<br><em>from storefront to</em> digital marketplace.</h1>
+    <p class="hero-desc">CoreLynx Ventures Inc. is a New York City-based e-commerce and business solutions company helping businesses of all sizes establish, grow, and manage their online presence — whether you're a new seller or an established brick-and-mortar store ready to go digital.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Work with us <span class="arrow">→</span></button>
+      <button class="btn-outline" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Learn more</button>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hstat-val">3</div><div class="hstat-label">Platforms</div></div>
+      <div><div class="hstat-val">6+</div><div class="hstat-label">Services</div></div>
+      <div><div class="hstat-val">NYC</div><div class="hstat-label">Based in</div></div>
+      <div><div class="hstat-val">100%</div><div class="hstat-label">End-to-end support</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">// Pipeline status: operational</span>
+    <span class="ticker-item">// Platforms active: Amazon · eBay · Shopify</span>
+    <span class="ticker-item">// NYC-based e-commerce solutions</span>
+    <span class="ticker-item">// End-to-end digital storefront setup</span>
+    <span class="ticker-item">// Market research &amp; trend analysis</span>
+    <span class="ticker-item">// Sales analytics &amp; BI dashboards</span>
+    <span class="ticker-item">// Competitive pricing strategy</span>
+    <span class="ticker-item">// Feasibility assessment &amp; platform selection</span>
+    <span class="ticker-item">// Pipeline status: operational</span>
+    <span class="ticker-item">// Platforms active: Amazon · eBay · Shopify</span>
+    <span class="ticker-item">// NYC-based e-commerce solutions</span>
+    <span class="ticker-item">// End-to-end digital storefront setup</span>
+    <span class="ticker-item">// Market research &amp; trend analysis</span>
+    <span class="ticker-item">// Sales analytics &amp; BI dashboards</span>
+    <span class="ticker-item">// Competitive pricing strategy</span>
+    <span class="ticker-item">// Feasibility assessment &amp; platform selection</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div>
+      <p class="section-eyebrow">About us</p>
+      <h2>Your partner in building an online business</h2>
+      <p>CoreLynx Ventures Inc. is an NYC-based e-commerce and dropshipping company that specializes in helping businesses launch and scale their online retail presence.</p>
+      <p>We work with both independent sellers and established physical businesses — including retail stores, specialty grocers, and niche product shops — who want to expand beyond their local area and reach customers online. Our team handles everything from initial feasibility assessment to full platform setup and ongoing sales analytics.</p>
+      <div class="about-cta">
+        <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get in touch <span class="arrow">→</span></button>
+      </div>
+    </div>
+    <div class="about-card">
+      <p class="about-card-label">What we handle for you</p>
+      <ul class="checklist">
+        <li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Initial feasibility assessment &amp; platform selection</li>
+        <li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Full account setup on Amazon, eBay, and Shopify</li>
+        <li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Product listing creation and optimization</li>
+        <li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Ongoing sales analytics and performance reporting</li>
+        <li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Competitive pricing strategy and market research</li>
+        <li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Business intelligence dashboards and data reporting</li>
+      </ul>
+      <div class="about-footer">
+        <span class="about-big">100%</span>
+        <span class="about-caption">end-to-end support — from setup to ongoing operations</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="section-header">
+      <p class="section-eyebrow" style="color:var(--gold)">What we do</p>
+      <h2>Our services</h2>
+      <p>A complete suite of e-commerce services designed to get your business online and keep it growing.</p>
+    </div>
+    <div class="services-grid">
+      <div class="scard">
+        <div class="scard-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
+        <p class="scard-title">Digital storefront setup</p>
+        <p class="scard-text">We help brick-and-mortar businesses and independent sellers launch fully operational online stores on Amazon, eBay, and Shopify — from account setup to listing optimization.</p>
+      </div>
+      <div class="scard">
+        <div class="scard-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <p class="scard-title">E-commerce feasibility assessment</p>
+        <p class="scard-text">Before going online, we analyze your inventory, sales records, and pricing to determine which products have the strongest potential and which platforms are the right fit.</p>
+      </div>
+      <div class="scard">
+        <div class="scard-icon"><svg viewBox="0 0 24 24"><polyline points="23,6 13.5,15.5 8.5,10.5 1,18"/><polyline points="17,6 23,6 23,12"/></svg></div>
+        <p class="scard-title">Market research &amp; trend analysis</p>
+        <p class="scard-text">We identify trending products and market opportunities across e-commerce platforms to help clients make data-driven decisions about what to sell and when.</p>
+      </div>
+      <div class="scard">
+        <div class="scard-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <p class="scard-title">Competitive pricing strategy</p>
+        <p class="scard-text">We analyze market pricing and historical invoice data to help clients price competitively across online channels without sacrificing margin.</p>
+      </div>
+      <div class="scard">
+        <div class="scard-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <p class="scard-title">Sales analytics &amp; reporting</p>
+        <p class="scard-text">Ongoing analysis of sales performance, conversion metrics, and revenue trends to help clients understand what's working and where to optimize.</p>
+      </div>
+      <div class="scard">
+        <div class="scard-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+        <p class="scard-title">Business intelligence dashboards</p>
+        <p class="scard-text">We build and maintain reporting dashboards that give clients a clear, real-time picture of how their online business is performing at any given time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE WORK WITH -->
+<section class="who" id="who">
+  <div class="who-inner">
+    <div class="section-header">
+      <p class="section-eyebrow" style="color:var(--gold)">Who we work with</p>
+      <h2>Built for businesses like yours</h2>
+      <p>Whether you're just getting started or ready to scale, we work with all kinds of businesses looking to build a real online presence.</p>
+    </div>
+    <div class="who-grid">
+      <div class="wcard">
+        <div class="wcard-icon"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
+        <p class="wcard-title">Independent dropshippers</p>
+        <p class="wcard-text">Sellers who want to launch or scale a dropshipping operation across major platforms. We help you find winning products, set up storefronts, and track performance from day one.</p>
+      </div>
+      <div class="wcard">
+        <div class="wcard-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+        <p class="wcard-title">Brick-and-mortar retailers</p>
+        <p class="wcard-text">Physical stores looking to expand their reach by setting up an online presence and selling beyond their local neighborhood. We make going digital straightforward — no tech background required.</p>
+      </div>
+      <div class="wcard">
+        <div class="wcard-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <p class="wcard-title">Niche &amp; specialty businesses</p>
+        <p class="wcard-text">Businesses with unique or community-focused product lines — from specialty grocers to artisan brands — looking to reach customers online who share their interests and values.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-header">
+      <p class="section-eyebrow" style="color:var(--gold)">Get in touch</p>
+      <h2>Let's talk</h2>
+      <p>Ready to take your business online? Reach out and we'll walk you through what's possible.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="cinfo">
+        <div class="cinfo-item">
+          <div class="cinfo-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <p class="cinfo-label">Address</p>
+            <p class="cinfo-val">22138 Horace Harding Expy,<br>Oakland Gardens, NY 11364</p>
+          </div>
+        </div>
+        <div class="cinfo-item">
+          <div class="cinfo-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.11 1.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg></div>
+          <div>
+            <p class="cinfo-label">Phone</p>
+            <p class="cinfo-val"><a href="tel:+13478487699">(347) 848-7699</a></p>
+          </div>
+        </div>
+        <div class="cinfo-item">
+          <div class="cinfo-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <p class="cinfo-label">Email</p>
+            <p class="cinfo-val"><a href="mailto:corelynxventures@gmail.com">corelynxventures@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="cform-wrap">
+        <div class="form-row">
+          <div class="fgroup">
+            <label for="fname">Your name</label>
+            <input type="text" id="fname" placeholder="John Doe">
+          </div>
+          <div class="fgroup">
+            <label for="femail">Email address</label>
+            <input type="email" id="femail" placeholder="john@company.com">
+          </div>
+        </div>
+        <div class="fgroup">
+          <label for="fmsg">Message</label>
+          <textarea id="fmsg" placeholder="Tell us about your business and what you're looking to do online..."></textarea>
+        </div>
+        <button class="form-submit" onclick="handleSubmit(this)">Send message <span class="arrow">→</span></button>
+        <div class="form-success" id="fsuccess">✓ Message sent! We'll be in touch within 1 business day.</div>
+        <p class="form-note">We typically respond within 1 business day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">
+        <div class="footer-mark"><span>CL</span></div>
+        <span class="footer-name">CoreLynx Ventures Inc.</span>
+      </div>
+      <p class="footer-tag">Taking your business online — from storefront to digital marketplace.</p>
+      <p class="footer-email"><a href="mailto:corelynxventures@gmail.com">corelynxventures@gmail.com</a></p>
+    </div>
+    <p class="footer-copy">&copy; 2026 CoreLynx Ventures Inc.<br>All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(btn) {
+  const name = document.getElementById('fname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const msg = document.getElementById('fmsg').value.trim();
+  if (!name || !email || !msg) {
+    alert('Please fill in all fields before sending.');
+    return;
+  }
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.style.display = 'none';
+    document.getElementById('fsuccess').style.display = 'block';
+    document.getElementById('fname').value = '';
+    document.getElementById('femail').value = '';
+    document.getElementById('fmsg').value = '';
+  }, 900);
+}
+</script>
+</body>
+</html>

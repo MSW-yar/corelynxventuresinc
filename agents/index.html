@@ -1,136 +1,459 @@
-CL
-CoreLynx Ventures Inc.
-Agents Division
-	•	Why Us
-	•	Capabilities
-	•	Case Files
-	•	Connect
-Open a file
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CoreLynx Ventures Inc. — Agents Division. Custom AI agents for e-commerce and finance-adjacent operations.">
+<title>Agents Division — CoreLynx Ventures Inc.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:#1a1a1a;background:#fff;-webkit-font-smoothing:antialiased}
+:root{--navy:#1F3A5F;--gold:#C9A84C;--light:#F4F6F9;--grey:#5a6a7a;--border:#e2eaf3}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1140px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:38px;height:38px;background:var(--navy);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-mark span{color:#fff;font-weight:800;font-size:13px;letter-spacing:1px;font-family:'Plus Jakarta Sans',sans-serif}
+.logo-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;color:var(--navy);line-height:1.2}
+.logo-sub{font-size:10px;color:#9aabb8;font-weight:500;letter-spacing:0.05em}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;color:var(--grey);transition:color .2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta{padding:9px 22px;background:var(--navy);color:#fff;font-size:13px;font-weight:600;border-radius:5px;border:none;cursor:pointer;transition:all .2s;letter-spacing:0.02em}
+.nav-cta:hover{background:var(--gold);color:var(--navy)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;border:none;background:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.mobile-menu{display:none;background:#fff;border-bottom:1px solid var(--border);padding:1.5rem 2rem}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:10px 0;font-size:15px;font-weight:500;color:var(--grey);border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border-bottom:none}
+.hero{padding:88px 2rem 72px;background:#fff}
+.hero-inner{max-width:1140px;margin:0 auto}
+.hero-toprow{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:36px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--light);border:1px solid var(--border);padding:7px 16px;border-radius:4px;font-size:11px;font-weight:700;color:var(--navy);letter-spacing:0.08em;text-transform:uppercase}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.platform-tags{display:flex;gap:8px}
+.ptag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:5px 11px;background:var(--light);border:1px solid var(--border);color:var(--grey);border-radius:3px}
+.hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2.2rem,5.5vw,4rem);font-weight:800;line-height:1.06;color:var(--navy);margin-bottom:26px;max-width:820px;letter-spacing:-0.02em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-desc{font-size:16px;line-height:1.75;color:var(--grey);max-width:580px;margin-bottom:40px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:var(--navy);color:#fff;font-size:14px;font-weight:600;border-radius:5px;border:none;cursor:pointer;transition:all .2s;letter-spacing:0.01em}
+.btn-primary:hover{background:var(--gold);color:var(--navy)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border:1.5px solid var(--navy);color:var(--navy);font-size:14px;font-weight:600;border-radius:5px;background:transparent;cursor:pointer;transition:all .2s}
+.btn-outline:hover{background:var(--navy);color:#fff}
+.arrow{display:inline-block;transition:transform .2s}
+.btn-primary:hover .arrow{transform:translateX(3px)}
+.hero-stats{display:flex;gap:48px;border-top:1px solid var(--border);padding-top:36px;flex-wrap:wrap}
+.hstat-val{font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:800;color:var(--navy)}
+.hstat-label{font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#aabbc8;margin-top:3px}
+.ticker{padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:#fafbfc;overflow:hidden}
+.ticker-track{display:flex;gap:56px;white-space:nowrap;animation:ticker 28s linear infinite}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{font-family:'Inter',monospace;font-size:11px;color:#a0b0bf;text-transform:uppercase;letter-spacing:0.12em}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.about{background:var(--navy);padding:88px 2rem;color:#fff}
+.about-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.section-eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--gold);margin-bottom:18px}
+.about h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.7rem,3.5vw,2.8rem);font-weight:800;line-height:1.18;margin-bottom:22px;letter-spacing:-0.01em}
+.about p{font-size:15px;line-height:1.8;color:#b8c8d8;margin-bottom:18px}
+.about-cta{margin-top:32px}
+.about-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:36px}
+.about-card-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:26px}
+.checklist{list-style:none}
+.checklist li{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;color:#cad8e4;line-height:1.5}
+.checklist li:last-child{border-bottom:none}
+.chk{width:20px;height:20px;border-radius:50%;background:rgba(201,168,76,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.chk svg{width:11px;height:11px;stroke:var(--gold);stroke-width:2.5;fill:none}
+.about-footer{margin-top:28px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.1);display:flex;align-items:baseline;gap:12px}
+.about-big{font-family:'Plus Jakarta Sans',sans-serif;font-size:38px;font-weight:800;color:#fff}
+.about-caption{font-size:13px;color:#7a9aaf;max-width:200px;line-height:1.45}
+.services{padding:88px 2rem;background:#fff}
+.services-inner{max-width:1140px;margin:0 auto}
+.section-header{margin-bottom:52px}
+.section-header h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.7rem,3.5vw,2.8rem);font-weight:800;color:var(--navy);margin-bottom:12px;letter-spacing:-0.01em}
+.section-header p{font-size:15px;color:var(--grey);max-width:480px}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.scard{padding:34px;background:var(--light);border:1px solid var(--border);border-radius:5px;transition:all .25s;cursor:default}
+.scard:hover{border-color:var(--gold);background:#fff;transform:translateY(-2px);box-shadow:0 8px 32px rgba(31,58,95,.08)}
+.scard-icon{width:46px;height:46px;background:var(--navy);border-radius:5px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;transition:background .25s}
+.scard:hover .scard-icon{background:var(--gold)}
+.scard-icon svg{width:22px;height:22px;stroke:#fff;stroke-width:1.8;fill:none}
+.scard-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.scard-text{font-size:13px;line-height:1.75;color:var(--grey)}
+.who{padding:88px 2rem;background:var(--light)}
+.who-inner{max-width:1140px;margin:0 auto}
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.wcard{background:#fff;border:1px solid var(--border);border-radius:5px;padding:32px;transition:all .25s;display:flex;flex-direction:column;gap:14px}
+.wcard:hover{border-color:var(--navy);box-shadow:0 8px 32px rgba(31,58,95,.08);transform:translateY(-2px)}
+.wcard-top{display:flex;justify-content:space-between;align-items:center}
+.wcard-fileno{font-size:11px;font-weight:700;letter-spacing:0.1em;color:#9aabb8}
+.wstamp{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border-radius:3px}
+.wstamp-deployed{background:rgba(60,150,100,0.1);color:#2f7a52}
+.wstamp-pilot{background:rgba(201,168,76,0.15);color:#8a6d1f}
+.wcard-cat{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold)}
+.wcard-title{font-size:17px;font-weight:700;color:var(--navy);font-family:'Plus Jakarta Sans',sans-serif}
+.wfield{font-size:12.5px;line-height:1.6}
+.wfield .k{font-weight:700;color:var(--navy);display:block;margin-bottom:2px;font-size:11px;text-transform:uppercase;letter-spacing:0.05em}
+.wfield .v{color:var(--grey)}
+.wfield .v.placeholder{font-style:italic;color:#aabbc8}
+.pricing-cta{padding:72px 2rem;background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.pricing-cta-inner{max-width:720px;margin:0 auto;text-align:center}
+.pricing-cta-inner .section-eyebrow{justify-content:center;display:flex}
+.pricing-cta-inner p{font-size:15px;color:var(--grey);line-height:1.75;margin-bottom:28px}
+.contact{padding:88px 2rem;background:#fff}
+.contact-inner{max-width:1140px;margin:0 auto}
+.contact-header{margin-bottom:52px;max-width:520px}
+.contact-header h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.7rem,3.5vw,2.8rem);font-weight:800;color:var(--navy);margin-bottom:12px;letter-spacing:-0.01em}
+.contact-header p{font-size:15px;color:var(--grey)}
+.contact-grid{display:grid;grid-template-columns:2fr 3fr;gap:56px;align-items:start}
+.cinfo{display:flex;flex-direction:column;gap:30px}
+.cinfo-item{display:flex;align-items:flex-start;gap:18px}
+.cinfo-icon{width:44px;height:44px;background:var(--navy);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cinfo-icon svg{width:20px;height:20px;stroke:#fff;stroke-width:1.8;fill:none}
+.cinfo-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#aabbc8;margin-bottom:5px}
+.cinfo-val{font-size:14px;color:#333;line-height:1.6}
+.cinfo-val a{color:var(--gold)}
+.cinfo-val a:hover{text-decoration:underline}
+.cform-wrap{background:var(--light);border:1px solid var(--border);border-radius:6px;padding:36px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fgroup{margin-bottom:18px}
+.fgroup:last-of-type{margin-bottom:0}
+label{display:block;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:7px;letter-spacing:0.03em}
+input[type=text],input[type=email],select,textarea{width:100%;border:1px solid #cdd8e6;border-radius:5px;padding:11px 15px;font-size:14px;color:#222;background:#fff;outline:none;transition:border .2s;font-family:'Inter',sans-serif;-webkit-appearance:none}
+input:focus,select:focus,textarea:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(31,58,95,.08)}
+textarea{resize:vertical;height:110px}
+.form-submit{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:13px 28px;background:var(--navy);color:#fff;font-size:14px;font-weight:600;border:none;border-radius:5px;cursor:pointer;transition:all .2s;letter-spacing:0.01em}
+.form-submit:hover{background:var(--gold);color:var(--navy)}
+.form-note{font-size:12px;color:#aabbc8;margin-top:10px}
+.form-success{display:none;background:#eafaf2;border:1px solid #86e0b4;color:#1a6640;padding:14px 18px;border-radius:5px;font-size:14px;font-weight:500;margin-top:16px}
+footer{background:var(--navy);color:#fff;padding:52px 2rem}
+.footer-inner{max-width:1140px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.footer-mark{width:34px;height:34px;background:rgba(255,255,255,0.1);border-radius:5px;display:flex;align-items:center;justify-content:center}
+.footer-mark span{color:#fff;font-weight:800;font-size:12px;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:1px}
+.footer-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px}
+.footer-tag{font-size:12px;color:#8a9fb0;margin-bottom:5px}
+.footer-email a{font-size:12px;color:var(--gold)}
+.footer-email a:hover{text-decoration:underline}
+.footer-copy{font-size:12px;color:#6a8090;text-align:right}
+@media(max-width:900px){
+.services-grid{grid-template-columns:1fr 1fr}
+.who-grid{grid-template-columns:1fr 1fr}
+.about-inner{grid-template-columns:1fr;gap:40px}
+.contact-grid{grid-template-columns:1fr;gap:32px}
+}
+@media(max-width:640px){
+.services-grid,.who-grid{grid-template-columns:1fr}
+.nav-links,.nav-cta{display:none}
+.hamburger{display:flex}
+.form-row{grid-template-columns:1fr}
+.hero-stats{gap:24px}
+.platform-tags{display:none}
+.footer-inner{flex-direction:column;align-items:flex-start}
+.footer-copy{text-align:left}
+}
+</style>
+</head>
+<body>
 
-CORELYNX VENTURES — AGENTS DIVISION
-E-COMMERCE
-FINANCE OPS
-CUSTOM BUILDS
-Systems that work your operation — not just answer questions.
-We design, deploy, and maintain custom AI agents for e-commerce and finance-adjacent teams — proven first inside CoreLynx's own operations before they ever reach a client.
-Open a file
-→
-See case files
-4
-AGENT CATEGORIES
-2
-DEPLOYED IN-HOUSE
-NYC
-BASED IN
-24/7
-MONITORED
-// AGENTS DIVISION: OPERATIONAL
-// CATEGORIES: OPS · SUPPORT · LEADS · REPORTING
-// BUILT INSIDE CORELYNX'S OWN E-COMMERCE OPERATION
-// SUBSCRIPTION-BASED, ONGOING SUPPORT
-// SETUP FEE + MONTHLY RATE, QUOTED AFTER INTAKE
-// NYC-BASED AGENTS PRACTICE
-// AGENTS DIVISION: OPERATIONAL
-// CATEGORIES: OPS · SUPPORT · LEADS · REPORTING
-// BUILT INSIDE CORELYNX'S OWN E-COMMERCE OPERATION
-// SUBSCRIPTION-BASED, ONGOING SUPPORT
-// SETUP FEE + MONTHLY RATE, QUOTED AFTER INTAKE
-// NYC-BASED AGENTS PRACTICE
-WHY CORELYNX
-We're not building demos
-Most agencies show you a chatbot on a landing page. Every agent we build has already been tested against a real operation first — CoreLynx runs its own e-commerce business, and that's where every design gets proven.
-Our background is in credit and risk analysis as much as software, which shows up in how carefully an agent is scoped before it touches your customers or your money.
-Open a file
-→
-EVERY ENGAGEMENT INCLUDES
-	•	 Scoping call and fixed setup quote — no open-ended hourly guessing  A working version to react to before final handoff  Hosting and monitoring included in the monthly rate  A monthly support allowance for iteration, not a one-time handoff
-24/7
-monitoring on every deployed agent
-WHAT WE BUILD
-Capabilities
-Four categories cover most of what a growing operation actually needs automated first.
+<nav id="top">
+<div class="nav-inner">
+<a class="logo" href="/">
+<div class="logo-mark"><span>CL</span></div>
+<div>
+<div class="logo-name">CoreLynx Ventures Inc.</div>
+<div class="logo-sub">Agents Division</div>
+</div>
+</a>
+<ul class="nav-links">
+<li><a href="#why">Why Us</a></li>
+<li><a href="#capabilities">Capabilities</a></li>
+<li><a href="#files">Case Files</a></li>
+<li><a href="#connect">Connect</a></li>
+</ul>
+<button class="nav-cta" onclick="document.getElementById('connect').scrollIntoView({behavior:'smooth'})">Open a file</button>
+<button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mmenu').classList.toggle('open')">
+<span></span><span></span><span></span>
+</button>
+</div>
+<div class="mobile-menu" id="mmenu">
+<a href="#why" onclick="this.closest('.mobile-menu').classList.remove('open')">Why Us</a>
+<a href="#capabilities" onclick="this.closest('.mobile-menu').classList.remove('open')">Capabilities</a>
+<a href="#files" onclick="this.closest('.mobile-menu').classList.remove('open')">Case Files</a>
+<a href="#connect" onclick="this.closest('.mobile-menu').classList.remove('open')">Connect</a>
+</div>
+</nav>
 
-Order & Inventory Ops
-Stock-threshold monitoring, drafted supplier reorders, and anomaly flags before a stockout happens.
+<section class="hero">
+<div class="hero-inner">
+<div class="hero-toprow">
+<div class="hero-badge"><span class="hero-dot"></span>CoreLynx Ventures — Agents Division</div>
+<div class="platform-tags">
+<span class="ptag">E-Commerce</span>
+<span class="ptag">Finance Ops</span>
+<span class="ptag">Custom Builds</span>
+</div>
+</div>
+<h1>Systems that work your operation —<br><em>not just answer</em> questions.</h1>
+<p class="hero-desc">We design, deploy, and maintain custom AI agents for e-commerce and finance-adjacent teams — proven first inside CoreLynx's own operations before they ever reach a client.</p>
+<div class="hero-btns">
+<button class="btn-primary" onclick="document.getElementById('connect').scrollIntoView({behavior:'smooth'})">Open a file <span class="arrow">→</span></button>
+<button class="btn-outline" onclick="document.getElementById('files').scrollIntoView({behavior:'smooth'})">See case files</button>
+</div>
+<div class="hero-stats">
+<div><div class="hstat-val">4</div><div class="hstat-label">Agent Categories</div></div>
+<div><div class="hstat-val">2</div><div class="hstat-label">Deployed In-House</div></div>
+<div><div class="hstat-val">NYC</div><div class="hstat-label">Based in</div></div>
+<div><div class="hstat-val">24/7</div><div class="hstat-label">Monitored</div></div>
+</div>
+</div>
+</section>
 
-Customer Inquiry Triage
-First-response drafting on order status, shipping, and returns — anything unusual routed to a person.
+<div class="ticker">
+<div class="ticker-track">
+<span class="ticker-item">// Agents division: operational</span>
+<span class="ticker-item">// Categories: ops · support · leads · reporting</span>
+<span class="ticker-item">// Built inside CoreLynx's own e-commerce operation</span>
+<span class="ticker-item">// Subscription-based, ongoing support</span>
+<span class="ticker-item">// Setup fee + monthly rate, quoted after intake</span>
+<span class="ticker-item">// NYC-based agents practice</span>
+<span class="ticker-item">// Agents division: operational</span>
+<span class="ticker-item">// Categories: ops · support · leads · reporting</span>
+<span class="ticker-item">// Built inside CoreLynx's own e-commerce operation</span>
+<span class="ticker-item">// Subscription-based, ongoing support</span>
+<span class="ticker-item">// Setup fee + monthly rate, quoted after intake</span>
+<span class="ticker-item">// NYC-based agents practice</span>
+</div>
+</div>
 
-Lead Qualification
-Inbound leads scored and logged automatically, so follow-up starts with context instead of a cold inbox.
+<section class="about" id="why">
+<div class="about-inner">
+<div>
+<p class="section-eyebrow">Why CoreLynx</p>
+<h2>We're not building demos</h2>
+<p>Most agencies show you a chatbot on a landing page. Every agent we build has already been tested against a real operation first — CoreLynx runs its own e-commerce business, and that's where every design gets proven.</p>
+<p>Our background is in credit and risk analysis as much as software, which shows up in how carefully an agent is scoped before it touches your customers or your money.</p>
+<div class="about-cta">
+<button class="btn-primary" onclick="document.getElementById('connect').scrollIntoView({behavior:'smooth'})">Open a file <span class="arrow">→</span></button>
+</div>
+</div>
+<div class="about-card">
+<p class="about-card-label">Every engagement includes</p>
+<ul class="checklist">
+<li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Scoping call and fixed setup quote — no open-ended hourly guessing</li>
+<li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>A working version to react to before final handoff</li>
+<li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Hosting and monitoring included in the monthly rate</li>
+<li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>A monthly support allowance for iteration, not a one-time handoff</li>
+</ul>
+<div class="about-footer">
+<span class="about-big">24/7</span>
+<span class="about-caption">monitoring on every deployed agent</span>
+</div>
+</div>
+</div>
+</section>
 
-Reporting & Dashboards
-Recurring operational summaries and anomaly flags, delivered on a schedule instead of chased down manually.
-CASE FILES
-Recent engagements
-Three files from the ledger. More are added as engagements close.
-FILE NO. 001
-DEPLOYED
-ORDER & INVENTORY OPS
-Reorder & Stock Watch Agent
-CLIENT
-CoreLynx Ventures (in-house)
-PROBLEM
-Manual stock checks and supplier reorder emails were consuming a recurring block of time each week.
-BUILD
-Watches inventory thresholds, drafts reorder communications, flags anomalies for a quick human review.
-OUTCOME
-Add your real number here once you have a month of data.
-FILE NO. 002
-DEPLOYED
-CUSTOMER INQUIRY TRIAGE
-First-Response Support Agent
-CLIENT
-CoreLynx Ventures (in-house)
-PROBLEM
-Routine questions about order status, shipping, and returns competed for the same attention as everything else.
-BUILD
-Reads inbound customer messages, drafts first-response answers, routes anything unusual to a person.
-OUTCOME
-Add your real number here once you have it.
-FILE NO. 003
-PILOT
-MULTI-STEP WORKFLOW AGENT
-Chained Research & Draft Agent
-CLIENT
-Internal pilot
-PROBLEM
-Testing how far a single agent can go before a task genuinely needs a human handoff.
-BUILD
-A multi-step agent chaining research, drafting, and review together.
-OUTCOME
-Moves to a numbered file once deployed with a live client.
-PRICING
-Priced to the job, sent to you directly
-Every engagement gets a setup fee and a monthly rate scoped to what you actually need — a single-workflow Starter build, a multi-step Growth build, or a fully custom system. We don't publish a menu here, because the honest number depends on your workflow. Open a file below and we'll follow up by email with a tailored quote, usually within 1–2 business days.
-Open a file
-→
-GET IN TOUCH
-Tell us what's eating your time
-Fill this in and it comes straight to our team — we'll follow up with next steps and a tailored quote.
+<section class="services" id="capabilities">
+<div class="services-inner">
+<div class="section-header">
+<p class="section-eyebrow" style="color:var(--gold)">What we build</p>
+<h2>Capabilities</h2>
+<p>Four categories cover most of what a growing operation actually needs automated first.</p>
+</div>
+<div class="services-grid">
+<div class="scard">
+<div class="scard-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+<p class="scard-title">Order & Inventory Ops</p>
+<p class="scard-text">Stock-threshold monitoring, drafted supplier reorders, and anomaly flags before a stockout happens.</p>
+</div>
+<div class="scard">
+<div class="scard-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+<p class="scard-title">Customer Inquiry Triage</p>
+<p class="scard-text">First-response drafting on order status, shipping, and returns — anything unusual routed to a person.</p>
+</div>
+<div class="scard">
+<div class="scard-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg></div>
+<p class="scard-title">Lead Qualification</p>
+<p class="scard-text">Inbound leads scored and logged automatically, so follow-up starts with context instead of a cold inbox.</p>
+</div>
+<div class="scard">
+<div class="scard-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+<p class="scard-title">Reporting & Dashboards</p>
+<p class="scard-text">Recurring operational summaries and anomaly flags, delivered on a schedule instead of chased down manually.</p>
+</div>
+</div>
+</div>
+</section>
 
-ADDRESS
-22138 Horace Harding Expy, Oakland Gardens, NY 11364
+<section class="who" id="files">
+<div class="who-inner">
+<div class="section-header">
+<p class="section-eyebrow" style="color:var(--gold)">Case files</p>
+<h2>Recent engagements</h2>
+<p>Three files from the ledger. More are added as engagements close.</p>
+</div>
+<div class="who-grid">
 
-PHONE
-(929)-671-5347
+<div class="wcard">
+<div class="wcard-top"><span class="wcard-fileno">FILE NO. 001</span><span class="wstamp wstamp-deployed">Deployed</span></div>
+<span class="wcard-cat">Order & Inventory Ops</span>
+<p class="wcard-title">Reorder & Stock Watch Agent</p>
+<div class="wfield"><span class="k">Client</span><span class="v">CoreLynx Ventures (in-house)</span></div>
+<div class="wfield"><span class="k">Problem</span><span class="v">Manual stock checks and supplier reorder emails were consuming a recurring block of time each week.</span></div>
+<div class="wfield"><span class="k">Build</span><span class="v">Watches inventory thresholds, drafts reorder communications, flags anomalies for a quick human review.</span></div>
+<div class="wfield"><span class="k">Outcome</span><span class="v placeholder">Add your real number here once you have a month of data.</span></div>
+</div>
 
-EMAIL
-corelynxventures@gmail.com
-Your name
-Email address
-Company
-Budget range
-Under $3,000
-$3,000 – $8,000
-$8,000+
-Not sure yet
-What are you looking to automate?
-Send inquiry
-→
-Opens your email client, addressed to our team.
-CL
-CoreLynx Ventures Inc. — Agents Division
-Systems that work your operation, not just answer questions.
-corelynxventures@gmail.com
-© 2026 CoreLynx Ventures Inc. All rights reserved.
+<div class="wcard">
+<div class="wcard-top"><span class="wcard-fileno">FILE NO. 002</span><span class="wstamp wstamp-deployed">Deployed</span></div>
+<span class="wcard-cat">Customer Inquiry Triage</span>
+<p class="wcard-title">First-Response Support Agent</p>
+<div class="wfield"><span class="k">Client</span><span class="v">CoreLynx Ventures (in-house)</span></div>
+<div class="wfield"><span class="k">Problem</span><span class="v">Routine questions about order status, shipping, and returns competed for the same attention as everything else.</span></div>
+<div class="wfield"><span class="k">Build</span><span class="v">Reads inbound customer messages, drafts first-response answers, routes anything unusual to a person.</span></div>
+<div class="wfield"><span class="k">Outcome</span><span class="v placeholder">Add your real number here once you have it.</span></div>
+</div>
+
+<div class="wcard">
+<div class="wcard-top"><span class="wcard-fileno">FILE NO. 003</span><span class="wstamp wstamp-pilot">Pilot</span></div>
+<span class="wcard-cat">Multi-step Workflow Agent</span>
+<p class="wcard-title">Chained Research & Draft Agent</p>
+<div class="wfield"><span class="k">Client</span><span class="v">Internal pilot</span></div>
+<div class="wfield"><span class="k">Problem</span><span class="v">Testing how far a single agent can go before a task genuinely needs a human handoff.</span></div>
+<div class="wfield"><span class="k">Build</span><span class="v">A multi-step agent chaining research, drafting, and review together.</span></div>
+<div class="wfield"><span class="k">Outcome</span><span class="v placeholder">Moves to a numbered file once deployed with a live client.</span></div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="pricing-cta">
+<div class="pricing-cta-inner">
+<p class="section-eyebrow" style="color:var(--gold)">Pricing</p>
+<h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2.2rem);color:var(--navy);margin-bottom:14px;">Priced to the job, sent to you directly</h2>
+<p>Every engagement gets a setup fee and a monthly rate scoped to what you actually need — a single-workflow Starter build, a multi-step Growth build, or a fully custom system. We don't publish a menu here, because the honest number depends on your workflow. Open a file below and we'll follow up by email with a tailored quote, usually within 1–2 business days.</p>
+<button class="btn-primary" onclick="document.getElementById('connect').scrollIntoView({behavior:'smooth'})">Open a file <span class="arrow">→</span></button>
+</div>
+</section>
+
+<section class="contact" id="connect">
+<div class="contact-inner">
+<div class="contact-header">
+<p class="section-eyebrow" style="color:var(--gold)">Get in touch</p>
+<h2>Tell us what's eating your time</h2>
+<p>Fill this in and it comes straight to our team — we'll follow up with next steps and a tailored quote.</p>
+</div>
+<div class="contact-grid">
+<div class="cinfo">
+<div class="cinfo-item">
+<div class="cinfo-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+<div>
+<p class="cinfo-label">Address</p>
+<p class="cinfo-val">22138 Horace Harding Expy,<br>Oakland Gardens, NY 11364</p>
+</div>
+</div>
+<div class="cinfo-item">
+<div class="cinfo-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.11 1.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg></div>
+<div>
+<p class="cinfo-label">Phone</p>
+<p class="cinfo-val"><a href="tel:+19296715347">(929) 671-5347</a></p>
+</div>
+</div>
+<div class="cinfo-item">
+<div class="cinfo-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+<div>
+<p class="cinfo-label">Email</p>
+<p class="cinfo-val"><a href="mailto:corelynxventures@gmail.com">corelynxventures@gmail.com</a></p>
+</div>
+</div>
+</div>
+<div class="cform-wrap">
+<div class="form-row">
+<div class="fgroup">
+<label for="fname">Your name</label>
+<input type="text" id="fname" placeholder="Jordan Alvarez">
+</div>
+<div class="fgroup">
+<label for="femail">Email address</label>
+<input type="email" id="femail" placeholder="jordan@company.com">
+</div>
+</div>
+<div class="fgroup">
+<label for="fcompany">Company</label>
+<input type="text" id="fcompany" placeholder="Company name">
+</div>
+<div class="fgroup">
+<label for="fbudget">Budget range</label>
+<select id="fbudget">
+<option>Under $3,000</option>
+<option>$3,000 – $8,000</option>
+<option>$8,000+</option>
+<option>Not sure yet</option>
+</select>
+</div>
+<div class="fgroup">
+<label for="fmsg">What are you looking to automate?</label>
+<textarea id="fmsg" placeholder="Tell us what's manual today, and what you'd want an agent to handle instead."></textarea>
+</div>
+<button class="form-submit" onclick="handleSubmit(this)">Send inquiry <span class="arrow">→</span></button>
+<div class="form-success" id="fsuccess">✓ Sent to our team — we'll be in touch within 1–2 business days.</div>
+<p class="form-note">Opens your email client, addressed to our team.</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-inner">
+<div class="footer-left">
+<div class="footer-logo">
+<div class="footer-mark"><span>CL</span></div>
+<span class="footer-name">CoreLynx Ventures Inc. — Agents Division</span>
+</div>
+<p class="footer-tag">Systems that work your operation, not just answer questions.</p>
+<p class="footer-email"><a href="mailto:corelynxventures@gmail.com">corelynxventures@gmail.com</a></p>
+</div>
+<p class="footer-copy">&copy; 2026 CoreLynx Ventures Inc.<br>All rights reserved.</p>
+</div>
+</footer>
+
+<script>
+const INQUIRY_ADDRESS = "corelynxventures@gmail.com";
+
+function handleSubmit(btn) {
+  const name = document.getElementById('fname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const company = document.getElementById('fcompany').value.trim();
+  const budget = document.getElementById('fbudget').value;
+  const msg = document.getElementById('fmsg').value.trim();
+
+  if (!name || !email || !msg) {
+    alert('Please fill in your name, email, and what you need before sending.');
+    return;
+  }
+
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  const subject = `New Agent Inquiry — ${company || name}`;
+  const body = `Name: ${name}\nEmail: ${email}\nCompany: ${company || "—"}\nBudget range: ${budget}\n\nWhat they're looking to automate:\n${msg}`;
+  const mailto = `mailto:${INQUIRY_ADDRESS}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  setTimeout(() => {
+    window.location.href = mailto;
+    btn.style.display = 'none';
+    document.getElementById('fsuccess').style.display = 'block';
+  }, 700);
+}
+</script>
+
+</body>
+</html>

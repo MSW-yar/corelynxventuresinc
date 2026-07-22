@@ -426,7 +426,7 @@ footer{background:var(--navy);color:#fff;padding:52px 2rem}
 </footer>
 
 <script>
-const INQUIRY_ADDRESS = "corelynxventures@gmail.com";
+const WEBHOOK_URL = "PASTE_YOUR_N8N_WEBHOOK_URL_HERE";
 
 function handleSubmit(btn) {
   const name = document.getElementById('fname').value.trim();
@@ -443,15 +443,19 @@ function handleSubmit(btn) {
   btn.textContent = 'Sending...';
   btn.disabled = true;
 
-  const subject = `New Agent Inquiry — ${company || name}`;
-  const body = `Name: ${name}\nEmail: ${email}\nCompany: ${company || "—"}\nBudget range: ${budget}\n\nWhat they're looking to automate:\n${msg}`;
-  const mailto = `mailto:${INQUIRY_ADDRESS}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-  setTimeout(() => {
-    window.location.href = mailto;
+  fetch(WEBHOOK_URL, {
+    method: 'POST',
+    body: JSON.stringify({ name, email, company, budget, need: msg })
+  })
+  .then(() => {
     btn.style.display = 'none';
     document.getElementById('fsuccess').style.display = 'block';
-  }, 700);
+  })
+  .catch(() => {
+    btn.textContent = 'Send inquiry →';
+    btn.disabled = false;
+    alert('Something went wrong — please try again or email us directly at corelynxventures@gmail.com.');
+  });
 }
 </script>
 

@@ -425,9 +425,7 @@ footer{background:var(--navy);color:#fff;padding:52px 2rem}
 </div>
 </footer>
 
-<script>
-const WEBHOOK_URL = "https://corelynxventures.app.n8n.cloud/webhook/agent-inquiry";
-
+<<script>
 function handleSubmit(btn) {
   const name = document.getElementById('fname').value.trim();
   const email = document.getElementById('femail').value.trim();
@@ -443,10 +441,19 @@ function handleSubmit(btn) {
   btn.textContent = 'Sending...';
   btn.disabled = true;
 
-  fetch(WEBHOOK_URL, {
+  fetch('https://formsubmit.co/ajax/corelynxventures@gmail.com', {
     method: 'POST',
-    body: JSON.stringify({ name, email, company, budget, need: msg })
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      Name: name,
+      Email: email,
+      Company: company || "—",
+      "Budget Range": budget,
+      "What they need": msg,
+      _subject: "New Agent Inquiry — " + (company || name)
+    })
   })
+  .then(res => res.json())
   .then(() => {
     btn.style.display = 'none';
     document.getElementById('fsuccess').style.display = 'block';

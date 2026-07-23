@@ -440,8 +440,8 @@ function handleSubmit(btn) {
 
   btn.textContent = 'Sending...';
   btn.disabled = true;
-
-  fetch('https://formsubmit.co/ajax/corelynxventures@gmail.com', {
+// https://formsubmit.co/ajax/corelynxventures@gmail.com/
+  fetch('https://corelynxventures.app.n8n.cloud/webhook-test/1ac9159b-01c9-4f0d-9c51-721a9ed4b3ff', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
     body: JSON.stringify({
